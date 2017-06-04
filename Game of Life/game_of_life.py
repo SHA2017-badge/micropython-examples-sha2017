@@ -36,9 +36,9 @@ def game_of_life():
         for x in range(0, width):
             for y in range(0, height):
                 if grid[x][y] == 1:
-                    badge.area(x*cell_width,y*cell_height, cell_width, cell_height, badge.BLACK)
+                    badge.area(x*cell_width,y*cell_height, cell_width-1, cell_height-1, badge.BLACK)
                 else:
-                    badge.area(x*cell_width,y*cell_height, cell_width, cell_height, badge.WHITE)
+                    badge.area(x*cell_width,y*cell_height, cell_width-1, cell_height-1, badge.WHITE)
         badge.flush()
 
     def step():
