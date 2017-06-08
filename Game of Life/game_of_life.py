@@ -16,7 +16,7 @@ import urandom
 
 def game_of_life():
     badge.eink_init()
-    ugfx.ugfx_init()
+    ugfx.init()
     ugfx.clear(ugfx.WHITE)
     ugfx.flush()
     width = 37
