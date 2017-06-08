@@ -11,13 +11,14 @@ import math
 import array
 import os
 import badge
+import ugfx
 import urandom
 
 def game_of_life():
     badge.eink_init()
-    badge.ugfx_init()
-    badge.clear(badge.WHITE)
-    badge.flush()
+    ugfx.ugfx_init()
+    ugfx.clear(ugfx.WHITE)
+    ugfx.flush()
     width = 37
     height = 16
     cell_width = 8
@@ -36,10 +37,10 @@ def game_of_life():
         for x in range(0, width):
             for y in range(0, height):
                 if grid[x][y] == 1:
-                    badge.area(x*cell_width,y*cell_height, cell_width-1, cell_height-1, badge.BLACK)
+                    ugfx.area(x*cell_width,y*cell_height, cell_width-1, cell_height-1, ugfx.BLACK)
                 else:
-                    badge.area(x*cell_width,y*cell_height, cell_width-1, cell_height-1, badge.WHITE)
-        badge.flush()
+                    ugfx.area(x*cell_width,y*cell_height, cell_width-1, cell_height-1, ugfx.WHITE)
+        ugfx.flush()
 
     def step():
         changed = 0
