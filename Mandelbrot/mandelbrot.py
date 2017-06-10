@@ -1,3 +1,5 @@
+import ugfx
+ugfx.init()
 # Based on http://0pointer.de/blog/projects/mandelbrot.html
 #dimensions = (badge.BADGE_EINK_WIDTH, badge.BADGE_EINK_HEIGHT)
 dimensions = (296, 128)
@@ -14,11 +16,6 @@ def iterate_mandelbrot(c, z = 0):
             return n
     return None
 
-import badge
-badge.init()
-import ugfx
-ugfx.init()
-
 ## Draw our image
 for y in range(dimensions[1]):
     for x in range(dimensions[0]):
@@ -32,3 +29,4 @@ for y in range(dimensions[1]):
         else:
             ugfx.pixel(x, y, ugfx.WHITE)
 
+ugfx.flush()
