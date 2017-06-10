@@ -12,4 +12,4 @@ ugfx.init()
 ugfx.clear(ugfx.WHITE)
 for j in range(n*twist):
     ugfx.pixel(int(G**(j/float(twist))*cos(j*k)+w/2), int(G**(j/float(twist))*sin(j*k)+w/2.0), ugfx.BLACK)
-
+ugfx.flush()
