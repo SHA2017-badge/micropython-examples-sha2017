@@ -1,19 +1,7 @@
-#import qrcode
-#qr = qrcode.QRCode(
-    #version=1,
-    #error_correction=qrcode.constants.ERROR_CORRECT_L,
-    #box_size=10,
-    #border=0,
-#)
-#qr.add_data('SHA2017 test data')
-#qr.make(fit=True)
-
-#matrix = qr.get_matrix()
-
 import ugfx
 import pyqrnative
-qr = pyqrnative.QRCode(3, pyqrnative.QRErrorCorrectLevel.L)
-qr.addData("test")
+qr = pyqrnative.QRCode(1, pyqrnative.QRErrorCorrectLevel.L)
+qr.addData("SHA2017 test")
 qr.make()
 k = qr.getModuleCount()
 
