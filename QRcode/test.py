@@ -1,14 +1,11 @@
 import ugfx
 import pyqrnative
-qr = pyqrnative.QRCode(1, pyqrnative.QRErrorCorrectLevel.L)
-qr.addData("SHA2017 test")
+# up to level 27 (125x125px) can be displayed
+qr = pyqrnative.QRCode(2, pyqrnative.QRErrorCorrectLevel.Q)
+qr.addData("https://sha2017.org/")
 qr.make()
-k = qr.getModuleCount()
-
+max_x = max_y = qr.getModuleCount()
 matrix = qr.modules
-
-max_x = len(matrix)
-max_y = len(matrix[0])
 
 disp_x, disp_y = (296, 128)
 block_x = int(disp_x/max_x)
