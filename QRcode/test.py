@@ -1,4 +1,5 @@
 import ugfx
+import math
 import pyqrnative
 # up to level 27 (125x125px) can be displayed
 qr = pyqrnative.QRCode(2, pyqrnative.QRErrorCorrectLevel.Q)
@@ -8,7 +9,7 @@ max_x = max_y = qr.getModuleCount()
 matrix = qr.modules
 
 disp_x, disp_y = (296, 128)
-block_size = int(disp_y/max_y)
+block_size = math.floor(disp_y/max_y)
 offset_x = int(disp_x/2) - int(block_size*max_y/2)
 offset_y = int(disp_y/2) - int(block_size*max_x/2)
 
