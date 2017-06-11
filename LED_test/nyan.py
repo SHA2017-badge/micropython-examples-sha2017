@@ -22,11 +22,12 @@ def lerp(a, b, t):
 
 the_color = red 
 colors = orig_colors
+next_colors = orig_colors
 while True:
-    orig_colors = orig_colors[1:]
-    orig_colors.append(orig_colors[0])
-    next_colors = orig_colors
-    for _ in range(10):
+    last = next_colors[0]
+    next_colors = next_colors[1:]
+    next_colors.append(last)
+    for _ in range(16):
         new_colors = []
         for i, x in enumerate(colors):
             new_colors.append(tuple(lerp(c, w, 0.25) for c, w in zip(colors[i], next_colors[i])))
