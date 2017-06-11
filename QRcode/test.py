@@ -8,10 +8,7 @@ max_x = max_y = qr.getModuleCount()
 matrix = qr.modules
 
 disp_x, disp_y = (296, 128)
-block_x = int(disp_x/max_x)
-block_y = int(disp_y/max_y)
-
-block_size = min(block_x, block_y)
+block_size = int(disp_y/max_y)
 offset_x = int(disp_x/2) - int(block_size*max_y/2)
 offset_y = int(disp_y/2) - int(block_size*max_x/2)
 
